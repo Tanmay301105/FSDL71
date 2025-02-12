@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Operators</h1>
+    <h2>Click the button to get sum of number</h2>
+    <button onclick="calculate()">Calculate</button>
+    <p id="result"></p>
+    
+
+    <script>
+        function calculate(){
+            let x = 4;
+            let y = 9;
+            let sum = x+ y ;
+            let sub = x-y;
+            let mul = x*y;
+            let div = x/y;
+            document.getElementById('result').innerHTML="Sum : "+sum +"<br>"+
+            "Subtraction = "+sub +"<br>"+
+            "Multiplication = "+mul +"<br>"+
+            "Division = "+div;
+        }
+    </script>
+</body>
+</html>

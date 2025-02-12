@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Age Calculator</title>
+</head>
+<body>
+    <h2>here is an simple age caculator</h2>
+    <label for="dob">Enter Birtdate : </label>
+    <input type="date" id="dob" placeholder="Day"> <br> <br>
+    <button onclick="age()">Calculate Age </button><br><br>
+    <b><label id="agecal"></label></b></b><br>
+
+    <script>
+        function age(){
+            let dob = document.getElementById('dob').value; //to get input
+
+            let birthdate = new Date(dob); //get the date format of birthdate
+            let currentdate = new Date(); //get current date
+
+            let age = currentdate.getFullYear() - birthdate.getFullYear(); //to get year
+            let month = currentdate.getMonth() - birthdate.getMonth(); //to get the month
+
+            document.getElementById('agecal').innerHTML = `You are ${age} years old.`;
+
+        }
+    </script>
+</body>
+</html>

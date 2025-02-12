@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Click the button to get the info of Car : </h1>
+    <button onclick="cari()">Click</button>
+    <h4 id="carinfo"></h4>
+
+    <script>
+        class Car{
+            constructor(make , model , year){
+                this.make = make;
+                this.model = model;
+                this.year = year;
+            }
+            mess(){
+                return `This is ${this.make} car and model is ${this.model} of year ${this.year}`;
+            }
+        }
+
+        let mycar = new Car("Maruti Suzuki" , "Ertiga" , 2017);
+
+        function cari(){
+            let info = mycar.mess();
+            document.getElementById('carinfo').innerHTML = info;
+        }
+    </script>
+</body>
+</html>

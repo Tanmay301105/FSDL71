@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password Strength Checker</title>
+</head>
+<body>
+    <h1>Password Strength Checker</h1>
+    <label for="pass">Enter your password : </label>
+    <input type="password" name="password" id="pass">
+    <p></p>
+
+    <script>
+        function pass(){
+            let passwd = document.getElementById('pass').value;
+            let passstrength = ""
+
+            if(passwd.length < 8){
+                passstrength += "Password should atleast contain 8 characters"
+            }
+        }
+    </script>
+</body>
+</html>
