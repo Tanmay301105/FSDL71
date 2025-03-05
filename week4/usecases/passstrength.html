@@ -17,7 +17,10 @@
             let passstrength = ""
 
             if(passwd.length < 8){
-                passstrength += "Password should atleast contain 8 characters"
+                passstrength += "Password should atleast contain 8 characters";
+            }
+            if(!/[A-Z]/test.passwd){
+                passstrength += "Password should contain atleast 1 uppercase characters";
             }
         }
     </script>
