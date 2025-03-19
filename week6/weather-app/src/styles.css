@@ -1,0 +1,32 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.container {
+    text-align: center;
+    margin-top: 50px;
+  }
+  
+  input {
+    padding: 8px;
+    margin-right: 10px;
+  }
+  
+  button {
+    padding: 8px 12px;
+    background-color: blue;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .weather-box {
+    margin-top: 20px;
+    padding: 15px;
+    border: 1px solid #ddd;
+    display: inline-block;
+    text-align: center;
+    background-color: #f3f3f3;
+    align-items: center;
+  }
+  
