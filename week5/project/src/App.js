@@ -92,7 +92,7 @@ function App(){
       <h2>Cart</h2>
       {cart.length === 0 ? <p> Cart is empty</p> : cart.map((item, index) => <p key={index}>{item.name}-{item.price}</p>)}
       <h3>Total</h3>
-      {cart.length === 0 ? <p> item not yet added</p> : cart.map((item, index) => <p key={index}>{item.name}-{item.price}</p>)}
+      {cart.length === 0 ? <p> item not yet added</p> : cart.map((item, index) => <p key={index}>{item.price}</p>)}
 
     </div>
   )
