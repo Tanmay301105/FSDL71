@@ -44,11 +44,13 @@ const App = () => {
   };
 
   return (
+    <center>
     <div>
-      <h1>To-Do List</h1>
-      <TodoForm addTask={addTask} />
-      <TodoList tasks={tasks} removeTask={removeTask} />
-    </div>
+        <h1>To-Do List</h1>
+        <TodoForm addTask={addTask} />
+        <TodoList tasks={tasks} removeTask={removeTask} />
+      </div>
+    </center>
   );
 };
 
