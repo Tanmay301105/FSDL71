@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="registrationApp">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Registration</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.8.2/angular.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .error {
+            color: red;
+        }
+        .success {
+            color: green;
+        }
+    </style>
+</head>
+<body ng-controller="RegistrationController">
+
+    <h1>User Registration</h1>
+    <form name="registrationForm" novalidate ng-submit="submitForm()" ng-class="{'was-validated': registrationForm.$submitted || registrationForm.$touched}">
+        <div>
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" ng-model="user.username" required minlength="3" />
+            <span class="error" ng-show="registrationForm.username.$error.required && (registrationForm.$submitted || registrationForm.username.$touched)">Username is required.</span>
+            <span class="error" ng-show="registrationForm.username.$error.minlength && (registrationForm.$submitted || registrationForm.username.$touched)">Username must be at least 3 characters long.</span>
+        </div>
+
+        <div>
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" ng-model="user.email" required />
+            <span class="error" ng-show="registrationForm.email.$error.required && (registrationForm.$submitted || registrationForm.email.$touched)">Email is required.</span>
+            <span class="error" ng-show="registrationForm.email.$error.email && (registrationForm.$submitted || registrationForm.email.$touched)">Invalid email address.</span>
+        </div>
+
+        <div>
+            <label for="password">Password:</label>
+            <input type="password" id="password" name="password" ng-model="user.password" required minlength="6" />
+            <span class="error" ng-show="registrationForm.password.$error.required && (registrationForm.$submitted || registrationForm.password.$touched)">Password is required.</span>
+            <span class="error" ng-show="registrationForm.password.$error.minlength && (registrationForm.$submitted || registrationForm.password.$touched)">Password must be at least 6 characters long.</span>
+        </div>
+
+        <button type="submit" ng-disabled="registrationForm.$invalid">Register</button>
+    </form>
+
+    <div ng-if="successMessage" class="success">{{ successMessage }}</div>
+
+    <script>
+        // Define the AngularJS application
+        var app = angular.module('registrationApp', []);
+
+        // Define the controller
+        app.controller('RegistrationController', function($scope) {
+            $scope.user = {}; // Initialize user object
+            $scope.successMessage = ''; // Initialize success message
+
+            // Function to submit the form
+            $scope.submitForm = function() {
+                if ($scope.registrationForm.$valid) {
+                    // Simulate a successful registration
+                    $scope.successMessage = 'Registration successful! Welcome, ' + $scope.user.username + '!';
+                    $scope.user = {}; // Clear the form
+                    $scope.registrationForm.$setPristine(); // Reset form state
+                    $scope.registrationForm.$setUntouched(); // Reset touched state
+                } else {
+                    $scope.successMessage = ''; // Clear success message if form is invalid
+                }
+            };
+        });
+    </script>
+
+</body>
+</html>
